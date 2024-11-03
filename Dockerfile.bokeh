@@ -2,7 +2,5 @@
 FROM mambaorg/micromamba:latest
 WORKDIR /usr/local/app
 
-COPY env.yaml /tmp
-# Install the application dependencies
-RUN micromamba install -y -n base -c conda-forge --file /tmp/env.yaml
-#RUN pip install --no-cache-dir -r requirements.txt
+COPY bokeh.yaml /tmp
+RUN micromamba install -y -n base -c conda-forge --file /tmp/bokeh.yaml
